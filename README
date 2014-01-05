@@ -1,0 +1,6 @@
+You can find the working example of this code on http://josh.myhugesite.com/amazon
+
+Note that additional setup is required if you wish to replicate this code:
+* Django (with Apache, mod_wsgi preferably)
+* Django project (you'll see that I called mine "josh")
+

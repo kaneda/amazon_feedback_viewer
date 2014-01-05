@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Amazon feedback viewer results</title>
+<link rel="stylesheet" href="/static/css/style.css" type="text/css">
+</head>
+<body>
+{% if hasErr %}
+<div class="error">Error: {{ error }}</div>
+{% else %}
+        Mode: {{ mode }}<br />
+        Number of entries: {{ num_entries }}<br />
+        {% for page in comments %}
+                {% for entry in page %}
+                        {% if entry %}
+                                Rating: {{ entry.0 }}<br />
+                                Comment: {{ entry.1 }}<br />
+                                Rater: {{ entry.2 }}<br />
+                                <br />
+                        {% endif %}
+                {% endfor %}
+        {% endfor %}
+{% endif %}
+</body>
+</html>
+

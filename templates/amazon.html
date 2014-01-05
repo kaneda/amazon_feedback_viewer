@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Amazon feedback viewer</title>
+<link rel="stylesheet" href="/static/css/style.css" type="text/css">
+</head>
+<body>
+        <div id="instructions">
+                <h1>How to use:</h1>
+Select your country, then paste the URL of the seller's "detailed seller information" (see below), and then enter the number of pages you'd like to see. This has a hardcoded wait limit on both incoming and outgoing requests, so you <i>cannot</i> spam it, nonetheless I would appreciate if you didn't spam. In other words, if you enter 100 pages then you will wait at least 100 seconds for results.<br />
+
+                <a href="/static/images/amazon_example.jpg"><img src="/static/images/amazon_example_thumb.jpg" /></a>
+        </div>
+        <div id="form_outer">
+                <div id="form_body">
+                        <form method="post" action="amazon">
+                        {% csrf_token %}
+                        <table>
+                                <tr>
+                                        <td><label for="modeSelect">Country:</label></td>
+                                        <td><select name="mode" id="modeSelect">
+                                                <option name="mode" value="us">Amazon.com</option>
+                                                <option name="mode" value="ca">Amazon.ca</option>
+                                        </select></td>
+                                </tr>
+                                <tr>
+                                        <td><label for="url">URL: </label></td>
+                                        <td><input type="text" name="url" id="url" /></td>
+                                </tr>
+                                <tr>
+                                        <td><label for="pages"># Pages: </label></td>
+                                        <td><input type="text" name="pages" id="pages" /></td>
+                                </tr>
+                                <tr>
+                                        <td><label for="rate">Find ratings below: </label></td>
+                                        <td><input type="text" name="rate" id="rate" value="10" /></td>
+                                </tr>
+                        </table>
+                        <input type="submit" value="submit" />
+                        </form>
+                </div>
+        </div>
+<br /><br />
+<div id="footer">
+Copyright (c) 2013 kaneda (http://josh.myhugesite.com)
+All rights reserved.<br />
+<br />
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:<br />
+<ol>
+<li>Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.</li>
+<li> Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.</li>
+</ol>
+<br />
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.<br />
+<br />
+Don't be evil.
+</div>
+</body>
+</html>
+
